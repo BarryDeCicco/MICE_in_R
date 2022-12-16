@@ -18,6 +18,7 @@ library(knitr)        # for kable()
 library(lubridate)    # for today()
 library(magrittr)     # for the pipe
 library(ggplot2)      # for graphs
+library(naniar)       # for Little's test and other missing data work.
 
 
 #### END OF Load Packages , set up path                          ####
