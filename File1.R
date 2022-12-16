@@ -22,5 +22,17 @@ library(ggplot2)      # for graphs
 
 #### END OF Load Packages , set up path                          ####
 
+#### Import and examine data                         ####
 
+data_file <- read.csv(file = here("inst/extdata","Sample_Data.csv"))
+
+head(data_file)
+tail(data_file)
+
+
+lapply(data_file, summary)
+
+
+
+#### END of Import and examine data                         ####
 
