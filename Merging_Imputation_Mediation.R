@@ -6,7 +6,7 @@
 
 #### Materials from 'R_ImputationExample_Ban.R'    ####
 
-# From P:\Consulting\FY22\Al-Sahab_Ban\22-145\Analyses  
+# From P:\Consulting\FY22\Al-Sahab_Ban\22-145\Analyses
 
 #### Load Libraries                                 ####
 library(dplyr)
@@ -48,7 +48,7 @@ mydata.subset
 
 
 #### Set-up variable and imputation method                      ####
-#                          
+#
 #
 ########################################################################################
 
@@ -125,8 +125,8 @@ mydata.imputed <- mice(mydata,
                        m=20,
                        maxit = 5,
                        seed = 4 ,
-                       predictorMatrix = predmatrix, 
-                       method = imputemethods, 
+                       predictorMatrix = predmatrix,
+                       method = imputemethods,
                        print =  TRUE,
                        ridge=0.0001,
                        threshold=1)
@@ -135,7 +135,7 @@ mydata.imputed <- mice(mydata,
 
 
 
-# Define each imputed dataset with it's own name 
+# Define each imputed dataset with it's own name
 # "1" means first datat set
 completedData.1 <- complete(mydata.imputed,1)
 completedData.2 <- complete(mydata.imputed,2)
@@ -187,7 +187,7 @@ completedData.18$X6 <- ifelse(completedData.18$X1 < 7, 1, 0)
 completedData.19$X6 <- ifelse(completedData.19$X1 < 7, 1, 0)
 completedData.20$X6 <- ifelse(completedData.20$X1 < 7, 1, 0)
 
-#### Materils from 
+#### Materils from
 # single list of above datasets
 datasets.df <- list(
   D1=completedData.1,
@@ -210,13 +210,13 @@ datasets.df <- list(
   D18=completedData.18,
   D19=completedData.19,
   D20=completedData.20
-) 
+)
 
 
 
 #### Materials from 'MulipleMediationExample_JordanTait.R'    ####
 
-# From P:\Consulting\FY22\Al-Sahab_Ban\22-145\Analyses  
+# From P:\Consulting\FY22\Al-Sahab_Ban\22-145\Analyses
 
 
 
@@ -233,11 +233,11 @@ treatment.df <- c("X6") # note how the treatment indicator is repeated
 # covariates.df <- c("X1+X2")
 
 # Perform medation on all datasets in list
-mymediations <- mediations(datasets=datasets.df, 
-                           treatment=treatment.df, 
-                           mediators=mediators.df, 
-                           outcome=outcome.df, 
-#                           covariates=covariates.df, 
+mymediations <- mediations(datasets=datasets.df,
+                           treatment=treatment.df,
+                           mediators=mediators.df,
+                           outcome=outcome.df,
+#                           covariates=covariates.df,
                            families=c("gaussian","gaussian"),
                            interaction=FALSE,
                            conf.level=.95,
@@ -250,6 +250,10 @@ mymediations.results <- amelidiate(mymediations)
 summary(mymediations.results)
 plot(mymediations.results)
 
+
+
+
+#### Barry's Materials                     ####
 
 
 
