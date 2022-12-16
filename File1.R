@@ -7,7 +7,7 @@
 
 ####  Load Packages, set up path                    ####
 
-here::i_am(path = "inst/File_Being_Called.Rmd")
+here::i_am(path = "inst/File1.Rmd")
 
 library(xfun)         # for Rscript_call()
 library(devtools)     # for session_info()
