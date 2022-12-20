@@ -20,7 +20,7 @@ library(psych)
 #### Create and prepare data                       ####
 
 # Simulate data
-df <- data.frame(matrix(data = sample(100,200,replace=TRUE), ncol = 5))
+df <- data.frame(matrix(data = sample(100,2000,replace=TRUE), ncol = 5))
 # Replace some values of X5 as NA's
 df[,5][df[,5]>90] <- NA
 
@@ -35,11 +35,16 @@ summary(mydata)
 #   Make column 4 depend on C1,-C3 in a strong mediator model.
 #   X1 will be the causal variable
 #   X2 will be the outcome
-#   X3 will be the mediator
-#   X4 and X5 will not be used in this equation.
+#   X3 will be the treatment
+#   X4 will be the mediator
+#   X5 will not be used in this equation.
+
 
 mydata$X3 <- rbinom(40,1,0.5)
-mydata$X2 <- mydata$X1 + 50*mydata$X3
+mydata$X4 <- mydata$X1 + 50
+mydata$X2 <- mydata$X1 + 2*mydata$X4 + 50*mydata$X3
+
+
 
 # Check the results, so that X2 was altered.
 
@@ -219,13 +224,13 @@ datasets.df <- list(
 
 
 # define mediator(s)
-mediators.df <- c("X2")
+mediators.df <- c("X4")
 
 # define outcome(s)
-outcome.df <- c("X3")
+outcome.df <- c("X2")
 
-# define treament variables
-treatment.df <- c("X6") # note how the treatment indicator is repeated
+# define treatment variables
+treatment.df <- c("X3") # note how the treatment indicator is repeated
 
 # define pre-treatment covariates
 # covariates.df <- c("X1+X2")
