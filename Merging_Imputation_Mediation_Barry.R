@@ -26,8 +26,22 @@ mydata<-df
 # check for missing
 summary(mydata)
 
+# Barry's additions:
+#   Make column three a binary treatment / control indicator.
+#   Make column 4 depend on C1,-C3 in a strong mediator model.
+#   X1 will be the causal variable
+#   X2 will be the outcome
+#   X3 will be the mediator
+#   X4 and X5 will not be used in this equation.
 
-mydata
+mydata$X3 <- rbinom(40,1,0.5)
+mydata$X2 <- mydata$X1 + 50*mydata$X3
+
+
+mydata %>%
+  group_by(X3) %>%
+  summary()
+
 #
 # # Removes column by position (column 2)
 # mydata.subset<-subset(mydata,select = -c(2))
