@@ -41,7 +41,7 @@ summary(mydata)
 
 
 mydata$X3 <- rbinom(40,1,0.5)
-mydata$X4 <- mydata$X1 + 50
+mydata$X4 <- mydata$X1 + rannorm(40,0,50)
 mydata$X2 <- mydata$X1 + 2*mydata$X4 + 50*mydata$X3
 
 
