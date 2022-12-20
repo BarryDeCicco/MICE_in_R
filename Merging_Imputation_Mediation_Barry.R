@@ -14,6 +14,8 @@ library(mice)
 library(mediation)
 library(magrittr)
 library(janitor)
+library(Hmisc)
+library(psych)
 
 #### Create and prepare data                       ####
 
@@ -41,8 +43,8 @@ mydata$X2 <- mydata$X1 + 50*mydata$X3
 
 
 mydata %>%
-  group_by(X3,X1,X2) %>%
-  tally()
+  group_by(X3) %>%
+  Hmisc::describe()
 
 #
 # # Removes column by position (column 2)
