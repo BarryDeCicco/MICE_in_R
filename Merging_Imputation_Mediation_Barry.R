@@ -12,6 +12,8 @@
 library(dplyr)
 library(mice)
 library(mediation)
+library(magrittr)
+
 
 #### Create and prepare data                       ####
 
