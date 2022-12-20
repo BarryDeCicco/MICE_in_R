@@ -224,7 +224,7 @@ datasets.df <- list(
 mediators.df <- c("X2")
 
 # define outcome(s)
-outcome.df <- c("X1")
+outcome.df <- c("X3")
 
 # define treament variables
 treatment.df <- c("X6") # note how the treatment indicator is repeated
