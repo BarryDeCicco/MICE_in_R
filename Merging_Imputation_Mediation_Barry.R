@@ -28,23 +28,23 @@ summary(mydata)
 
 
 mydata
-
-# Removes column by position (column 2)
-mydata.subset<-subset(mydata,select = -c(2))
-mydata.subset
-
-# Removes column by name ( column named X3)
-mydata.subset<-subset(mydata,select = -c(X3))
-mydata.subset
-
-# Subsets by column position (column 2 and 3)
-mydata.subset<-subset(mydata,select = c(2,3))
-mydata.subset
-
-# Subsets by column name (columns called )
-mydata.subset<-subset(mydata,select = c(X1,X4))
-mydata.subset
-
+#
+# # Removes column by position (column 2)
+# mydata.subset<-subset(mydata,select = -c(2))
+# mydata.subset
+#
+# # Removes column by name ( column named X3)
+# mydata.subset<-subset(mydata,select = -c(X3))
+# mydata.subset
+#
+# # Subsets by column position (column 2 and 3)
+# mydata.subset<-subset(mydata,select = c(2,3))
+# mydata.subset
+#
+# # Subsets by column name (columns called )
+# mydata.subset<-subset(mydata,select = c(X1,X4))
+# mydata.subset
+#
 
 
 #### Set-up variable and imputation method                      ####
