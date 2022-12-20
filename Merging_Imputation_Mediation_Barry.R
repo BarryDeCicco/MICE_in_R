@@ -13,7 +13,7 @@ library(dplyr)
 library(mice)
 library(mediation)
 library(magrittr)
-
+library(janitor)
 
 #### Create and prepare data                       ####
 
@@ -41,8 +41,8 @@ mydata$X2 <- mydata$X1 + 50*mydata$X3
 
 
 mydata %>%
-  group_by(X3) %>%
-  summary()
+  group_by(X3,X1,X2) %>%
+  tally()
 
 #
 # # Removes column by position (column 2)
