@@ -41,29 +41,9 @@ summary(mydata)
 mydata$X3 <- rbinom(40,1,0.5)
 mydata$X2 <- mydata$X1 + 50*mydata$X3
 
+# Check the results, so that X2 was altered.
 
-mydata %>%
-  group_by(X3) %>%
-  Hmisc::describe()
-
-#
-# # Removes column by position (column 2)
-# mydata.subset<-subset(mydata,select = -c(2))
-# mydata.subset
-#
-# # Removes column by name ( column named X3)
-# mydata.subset<-subset(mydata,select = -c(X3))
-# mydata.subset
-#
-# # Subsets by column position (column 2 and 3)
-# mydata.subset<-subset(mydata,select = c(2,3))
-# mydata.subset
-#
-# # Subsets by column name (columns called )
-# mydata.subset<-subset(mydata,select = c(X1,X4))
-# mydata.subset
-#
-
+describeBy(mydata, mydata$X3)
 
 #### Set-up variable and imputation method                      ####
 #
