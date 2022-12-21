@@ -46,15 +46,53 @@ Using two methods, and comparing them.
 tech_survey_foreign_df <- read.spss(file = here("inst/extdata/tech survey.sav"), 
                                     use.value.label=TRUE, to.data.frame=TRUE) 
 
-lapply(tech_survey_foreign_df, class)
 ```
 
 ```{r import-SPSS-data-set-haven-package}
- tech_survey_haven_df <- read_sav("inst/extdata/tech survey.sav")
+ tech_survey_haven_df <- read_sav(file=here("inst/extdata/tech survey.sav"))
+
+
+```
+
+# Examine Data Sets
+
+```{r examine-lapply-tech_survey_foreign_df }
+
+
+lapply(tech_survey_foreign_df, class)
+
+```
+
+
+
+```{r examine-lapply-tech_survey_haven_df }
 
 
 lapply(tech_survey_haven_df, class)
+
 ```
 
-# Compare Data Sets
+
+```{r view-tech_survey_foreign_df }
+
+
+View(tech_survey_foreign_df)
+     
+
+```
+
+
+```{r summarize-tech_survey_foreign_df }
+
+
+summary(tech_survey_foreign_df)
+     
+
+```
+
+
+
+
+
+
 
