@@ -34,3 +34,23 @@ library(mice)
 library(foreign)
 library(haven)
 ```
+
+
+
+
+
+```{r import-SPSS-data-set-foreign-package}
+
+tech_survey_foreign_df <- read.spss(file = here("inst/extdata/tech survey.sav"), 
+                                    use.value.label=TRUE, to.data.frame=TRUE) 
+
+```
+
+```{r import-SPSS-data-set-haven-package}
+ tech_survey_haven_df <- read_sav("inst/extdata/tech survey.sav")
+View(tech_survey)
+
+```
+
+
+
