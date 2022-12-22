@@ -38,13 +38,19 @@ library(haven)
 
 # Import Data from SPSS 
 
-Using using the foreign package
+Using two methods, and comparing them.
 
 
 ```{r import-SPSS-data-set-foreign-package}
 
 tech_survey_foreign_df <- read.spss(file = here("inst/extdata/tech survey.sav"), 
                                     use.value.label=TRUE, to.data.frame=TRUE) 
+
+```
+
+```{r import-SPSS-data-set-haven-package}
+ tech_survey_haven_df <- read_sav(file=here("inst/extdata/tech survey.sav"))
+
 
 ```
 
@@ -57,6 +63,14 @@ lapply(tech_survey_foreign_df, class)
 
 ```
 
+
+
+```{r examine-lapply-tech_survey_haven_df }
+
+
+lapply(tech_survey_haven_df, class)
+
+```
 
 
 ```{r view-tech_survey_foreign_df }
