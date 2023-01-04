@@ -1,1 +1,0 @@
-This file serves to force Git to upload folders; empty folders are not uploaded to the remote repo.
