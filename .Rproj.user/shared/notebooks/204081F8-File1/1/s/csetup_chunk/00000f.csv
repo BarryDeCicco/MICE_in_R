@@ -1,0 +1,7 @@
+"0","knitr::opts_chunk$set(echo = TRUE)"
+"0",""
+"0",""
+"0","# Declare location of this script relative to the project root directory."
+"0","here::i_am(path = ""inst/File1.Rmd"")"
+"2","here() starts at C:/Users/decicco1/OneDrive - Michigan State University/CSTATRedirects/Documents/R Studio Projects/MICE_in_R
+"
