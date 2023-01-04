@@ -1,0 +1,98 @@
+---
+title: "File 1"
+author: "Barry DeCicco"
+date: "2022-12-15"
+output: html_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+# Declare location of this script relative to the project root directory.
+here::i_am(path = "inst/File1.Rmd")
+
+
+```
+
+```{r load-packages, echo=FALSE}
+# Load Packages & Set Package Options
+
+library(here)         # for here()
+library(rmarkdown)    # for render()
+library(knitr)        # for kable()
+library(lubridate)    # for today()
+library(magrittr)     # for the pipe
+library(ggplot2)      # for graphs
+
+# For missing data:
+library(naniar)
+library(mice)
+
+# for SPSS
+library(foreign)
+library(haven)
+```
+
+
+# Import Data from SPSS 
+
+Using two methods, and comparing them.
+
+
+```{r import-SPSS-data-set-foreign-package}
+
+tech_survey_foreign_df <- read.spss(file = here("inst/extdata/tech survey.sav"), 
+                                    use.value.label=TRUE, to.data.frame=TRUE) 
+
+```
+
+```{r import-SPSS-data-set-haven-package}
+ tech_survey_haven_df <- read_sav(file=here("inst/extdata/tech survey.sav"))
+
+
+```
+
+# Examine Data Sets
+
+```{r examine-lapply-tech_survey_foreign_df }
+
+
+lapply(tech_survey_foreign_df, class)
+
+```
+
+
+
+```{r examine-lapply-tech_survey_haven_df }
+
+
+lapply(tech_survey_haven_df, class)
+
+```
+
+
+```{r view-tech_survey_foreign_df }
+
+
+View(tech_survey_foreign_df)
+     
+
+```
+
+
+```{r summarize-tech_survey_foreign_df }
+
+
+summary(tech_survey_foreign_df)
+     
+
+```
+
+
+
+
+
+
+
