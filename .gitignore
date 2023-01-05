@@ -20,6 +20,8 @@
 # RStudio files
 .Rproj.user/
 
+.Rproj.user*
+
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
@@ -41,4 +43,5 @@ vignettes/*.pdf
 # Folders
 
 inst/extdata/
+
 
