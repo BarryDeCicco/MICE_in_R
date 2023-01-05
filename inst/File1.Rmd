@@ -124,8 +124,6 @@ vis_miss(tech_survey_foreign_df)
 
 
 
-# Visualize Missing Data Patterns for the tech_survey_foreign_df
-
 ```{r visualize-missing-data-gg_miss_upset}
 
 gg_miss_upset(tech_survey_foreign_df)
@@ -134,7 +132,7 @@ gg_miss_upset(tech_survey_foreign_df)
 ```
 
 
-
+# Look at unique values and counts tech_survey_foreign_df
 
 
 
