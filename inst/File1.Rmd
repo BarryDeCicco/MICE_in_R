@@ -108,3 +108,23 @@ summary(tech_survey_haven_df)
      
 
 ```
+
+
+# Visualize Missing Data for the tech_survey_foreign_df
+
+```{r visualize-missing-data}
+
+vis_miss(tech_survey_foreign_df)
+
+```
+
+
+
+
+
+
+
+
+
+
+
