@@ -13,6 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 # Declare location of this script relative to the project root directory.
 here::i_am(path = "inst/File1.Rmd")
 
+# Set seed
+
+set.seed(7775695)
 
 ```
 
@@ -28,6 +31,7 @@ library(ggplot2)      # for graphs
 
 # For missing data:
 library(naniar)
+library(UpSetR)
 library(mice)
 
 # for SPSS
@@ -115,6 +119,17 @@ summary(tech_survey_haven_df)
 ```{r visualize-missing-data}
 
 vis_miss(tech_survey_foreign_df)
+
+```
+
+
+
+# Visualize Missing Data Patterns for the tech_survey_foreign_df
+
+```{r visualize-missing-data-gg_miss_upset}
+
+gg_miss_upset(tech_survey_foreign_df)
+
 
 ```
 
