@@ -52,12 +52,6 @@ tech_survey_foreign_df <- read.spss(file = here("inst/extdata/tech survey.sav"),
 
 ```
 
-```{r import-SPSS-data-set-haven-package}
- tech_survey_haven_df <- read_sav(file=here("inst/extdata/tech survey.sav"))
-
-
-```
-
 # Examine Data Sets
 
 ```{r examine-lapply-tech_survey_foreign_df }
@@ -67,14 +61,6 @@ lapply(tech_survey_foreign_df, class)
 
 ```
 
-
-
-```{r examine-lapply-tech_survey_haven_df }
-
-
-lapply(tech_survey_haven_df, class)
-
-```
 
 
 ```{r view-tech_survey_foreign_df }
@@ -96,22 +82,6 @@ summary(tech_survey_foreign_df)
 
 
 
-```{r view-tech_survey_haven_df }
-
-
-View(tech_survey_haven_df)
-     
-
-```
-
-
-```{r summarize-tech_survey_haven_df }
-
-
-summary(tech_survey_haven_df)
-     
-
-```
 
 
 # Visualize Missing Data for the tech_survey_foreign_df
