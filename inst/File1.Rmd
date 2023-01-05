@@ -92,7 +92,19 @@ summary(tech_survey_foreign_df)
 
 
 
+```{r view-tech_survey_haven_df }
 
 
+View(tech_survey_haven_df)
+     
+
+```
 
 
+```{r summarize-tech_survey_haven_df }
+
+
+summary(tech_survey_haven_df)
+     
+
+```
