@@ -102,7 +102,17 @@ gg_miss_upset(tech_survey_foreign_df)
 ```
 
 
-# Look at unique values and counts tech_survey_foreign_df
+# Look at unique values and counts for tech_survey_foreign_df
+
+```{r table-values-tech_survey_foreign_df}
+
+table_na <- function(x){
+  table(x, useNA = 'always')
+  }
+
+lapply(tech_survey_foreign_df, table_na)
+
+```
 
 
 
